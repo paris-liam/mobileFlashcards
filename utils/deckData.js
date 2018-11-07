@@ -24,7 +24,7 @@ function initialDecks() {
                 },
                 {
                     question: `9x1`,
-                    answer: '1'
+                    answer: '9'
                 }
             ]
         },
