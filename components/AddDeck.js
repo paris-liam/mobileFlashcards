@@ -11,15 +11,13 @@ class AddDeck extends Component {
     };
 
     submit = () => {
-            let newDeck = this.state.title
             this.props.dispatch(actions.addDeck(this.state.title));
-            helpers.addDeck(this.state.title);
             this.setState({title: ' '});
             Keyboard.dismiss();
-            this.props.navigation.navigate(
+            helpers.addDeck(this.state.title).then(()=>{        this.props.navigation.navigate(
                 'SingleDeck',
-                {deckId: newDeck}
-            );
+                {deckId: this.state.title}
+            )})
     };
 
     render() {

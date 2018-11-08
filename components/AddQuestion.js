@@ -19,7 +19,7 @@ class AddQuestion extends Component {
     };
 
     submit = () => {
-        {question,answer} = this.state;
+        let {question,answer} = this.state;
         if (question && answer) {
             this.props.dispatch(actions.addQuestion(this.props.navigation.state.params.deckId, question, answer));
             addQuestion(this.props.navigation.state.params.deckId, question, answer);

@@ -40,6 +40,7 @@ class SingleDeck extends Component {
         this.props.navigation.dispatch(NavigationActions.back());
     }
     componentDidMount() {
+
         let deckItem = null;
         Object.keys(this.props.decks).forEach(deckKey => {
             if (deckKey === this.props.navigation.state.params.deckId){
