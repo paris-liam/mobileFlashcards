@@ -51,6 +51,8 @@ class AddQuestion extends Component {
                     onPress={this.submit}>
                     <Text style={{color:'white'}}>Add Question</Text>
                 </TouchableOpacity>
+                <TouchableOpacity         style={Styles.DeckButton}
+    onPress={this.props.navigation.dispatch(NavigationActions.back())}>><Text style={{color:'white'}}>Back To Deck</Text></TouchableOpacity>
             </View>
         );
     }

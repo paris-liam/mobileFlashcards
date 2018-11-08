@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { NavigationActions } from 'react-navigation';
 import {QuestionTile} from './QuestionTile';
 import Styles from '../utils/styles';
+import { setLocalNotification, clearLocalNotification } from '../utils/helpers';
 
 class Quiz extends Component {
     state = {
@@ -31,6 +32,7 @@ class Quiz extends Component {
         });
 
         this.setState({questions});
+        clearLocalNotification().then(setLocalNotification);
     }
 
     resetQuiz = () => {
@@ -99,6 +101,8 @@ class Quiz extends Component {
                 {this.state.questions.length === 0 &&
                 <Text>Add Some Questions!!</Text>
                 }
+                  <TouchableOpacity         style={Styles.DeckButton}
+    onPress={this.props.navigation.dispatch(NavigationActions.back())}>><Text style={{color:'white'}}>Back To Deck</Text></TouchableOpacity>
             </View>
         );
     }

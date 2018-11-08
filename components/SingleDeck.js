@@ -59,7 +59,6 @@ class SingleDeck extends Component {
             this.setState({deck: props.decks[deckItem]});
     }
     render() {
-        console.log('THIS IS THE STATE ',this.state.deck);
         return (
             <View>
                 <Text style={Styles.allDeckstitle}>{this.state.deck.title}</Text>

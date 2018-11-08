@@ -12,6 +12,7 @@ import { Constants } from 'expo';
 import SingleDeck from './components/SingleDeck'
 import {pink,blue,purple,white} from './utils/styles';
 import Quiz from './components/Quiz'
+import {setLocalNotification } from './utils/helpers';
 
 function MobileCardStatusBar ({backgroundColor, ...props}) {
   return (
@@ -90,6 +91,9 @@ Quiz: {
 })
 
 export default class App extends React.Component {
+  componentDidMount() {
+      setLocalNotification()
+    }
   render() {
     return (
       <Provider store={createStore(reducer)}>
