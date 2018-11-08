@@ -29,16 +29,3 @@ export function addQuestion(title, question, answer) {
             }));
         });
 }
-export function removeDeck(title){
-    return AsyncStorage.getItem(DECK_STORAGE_KEY).then((results)=>{
-        let deck = JSON.parse(results);
-        let removedArrays = Object.keys(deck).filter((id)=>id!==title);
-        let newDeck = {};
-        removedArrays.forEach((id)=>{
-            newDeck[id] = deck[id];
-        })
-        return newDeck;
-    });
-   
-
-}

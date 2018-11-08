@@ -51,6 +51,9 @@ class Quiz extends Component {
     toggleQuestion = () => {
         this.setState({show: !this.state.show});
     };
+    backToDeck = () =>{
+        this.props.navigation.dispatch(NavigationActions.back());
+    }
 
     render() {
         return (
@@ -81,7 +84,7 @@ class Quiz extends Component {
                     <View>
                         <TouchableOpacity
                             style={Styles.DeckButton}
-                            onPress={() => this.props.navigation.dispatch(NavigationActions.back())}>
+                            onPress={backToDeck}>
                             <Text style={{color:'white'}}>Back to Deck</Text>
                         </TouchableOpacity>
 

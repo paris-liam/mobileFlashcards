@@ -65,7 +65,6 @@ class SingleDeck extends Component {
                 <Text style={Styles.NumOfQuestions}>{this.state.deck.questions.length} Questions</Text>
                 <TouchableOpacity style={Styles.DeckButton} onPress={()=>this.navigateAddQuestion(this.state.deck.title)}><Text style={{color:white}}>Add Question</Text></TouchableOpacity>
                 <TouchableOpacity style={Styles.DeckButton} onPress={()=>this.navigateQuiz(this.state.deck.title)}><Text style={{color:white}}>Start Quiz</Text></TouchableOpacity>
-                <TouchableOpacity style={Styles.DeckButton} onPress={()=>this.deleteDeck(this.state.deck.title)}><Text style={{color:white}}>Delete Deck</Text></TouchableOpacity>
             </View>
         );
     }
